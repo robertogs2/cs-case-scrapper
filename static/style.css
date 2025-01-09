@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f2f2f2;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#chart-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr; /* Exactly two columns */
+    align-items: start;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    #chart-container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+}
+
+.chart-box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Ensures the header and canvas are stacked */
+    min-height: 400px; /* Minimum height for the chart box */
+}
+
+.chart-box h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.chart-box canvas {
+    flex: 1; /* Ensures canvas fills available space */
+    width: 100% !important; /* Ensures full width */
+    height: auto !important; /* Maintains aspect ratio */
+    min-height: 300px; /* Sets a minimum height for the chart */
+}
+
+.chart-box button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Add padding for a larger button */
+    font-size: 1em; /* Increase font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.chart-box button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.zoom-button {
+    background-color: #6c757d; /* Neutral gray background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.zoom-button:hover {
+    background-color: #495057; /* Darker gray on hover */
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0; /* Add some spacing */
+    gap: 5px; /* Add spacing between buttons */
+}
+
+.tab-buttons button {
+    background-color: #f8f9fa; /* Light background */
+    border: 1px solid #ced4da; /* Light border */
+    color: #6c757d; /* Gray text for inactive buttons */
+    border-radius: 5px 5px 0 0; /* Rounded top corners for a tab effect */
+    padding: 5px 10px; /* Smaller padding for a compact look */
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-buttons button:hover {
+    background-color: #e9ecef; /* Slightly darker background on hover */
+    border-color: #adb5bd; /* Darker border on hover */
+    color: #495057; /* Darker gray on hover */
+}
+
+.tab-buttons button.active {
+    background-color: #007bff; /* Active tab background */
+    color: white; /* Active tab text color */
+    border-color: #007bff; /* Active tab border */
+    font-weight: bold; /* Bold text for active tab */
+}
+
+.tab-buttons button:disabled {
+    opacity: 0.6; /* Dimmed appearance for disabled buttons */
+    cursor: not-allowed; /* Show not-allowed cursor */
+    background-color: #e9ecef; /* Subtle background for disabled */
+    color: #adb5bd; /* Light gray text */
+}

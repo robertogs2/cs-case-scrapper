@@ -1,0 +1,48 @@
+import os
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+REQUESTED_CONTAINERS=[
+    "Chroma 2 Case",
+    "Chroma 3 Case",
+    "Chroma Case",
+    "Clutch Case",
+    "CS:GO Weapon Case",
+    "CS:GO Weapon Case 2",
+    "CS:GO Weapon Case 3",
+    "CS20 Case",
+    "Danger Zone Case",
+    "Dreams & Nightmares Case",
+    "eSports 2013 Case",
+    "eSports 2013 Winter Case",
+    "eSports 2014 Summer Case",
+    "Falchion Case",
+    "Fracture Case",
+    "Gallery Case",
+    "Gamma 2 Case",
+    "Gamma Case",
+    "Glove Case",
+    "Horizon Case",
+    "Huntsman Weapon Case",
+    "Kilowatt Case",
+    "Operation Bravo Case",
+    "Operation Breakout Weapon Case",
+    "Operation Broken Fang Case",
+    "Operation Hydra Case",
+    "Operation Phoenix Weapon Case",
+    "Operation Riptide Case",
+    "Operation Vanguard Weapon Case",
+    "Operation Wildfire Case",
+    "Prisma 2 Case",
+    "Prisma Case",
+    "Recoil Case",
+    "Revolution Case",
+    "Revolver Case",
+    "Shadow Case",
+    "Shattered Web Case",
+    "Snakebite Case",
+    "Spectrum 2 Case",
+    "Spectrum Case",
+    "Winter Offensive Weapon Case"
+]
+
+REQUESTED_CONTAINERS_CSV=[f"{x}.csv".lower().replace(" ", "_").replace(":", "_") for x in REQUESTED_CONTAINERS]
+REQUESTED_CONTAINERS_LINKS=[f"https://steamcommunity.com/market/listings/730/{x}" for x in REQUESTED_CONTAINERS]

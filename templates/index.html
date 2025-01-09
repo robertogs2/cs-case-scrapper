@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CS:GO Case Analytics</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@0.1.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@1.2.1"></script>
+<body>
+
+<header>
+  <h1>CS:GO Case Analytics</h1>
+</header>
+
+<main id="chart-container">
+  <!-- Charts will be dynamically inserted here -->
+</main>
+
+<!-- We pass csv_files and other from Flask to JavaScript by embedding it in a script tag -->
+<script>
+  const csvFiles = {{ csv_files|tojson }};
+  const itemNames = {{ item_names|tojson }};
+  const itemLinks = {{ item_links|tojson }};
+</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
